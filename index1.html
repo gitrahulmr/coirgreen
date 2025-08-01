@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CoirGreen Holidays</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 18px;
+      background: linear-gradient(#fff7f0, #f0f0f0);
+      color: #111;
+      padding: 0 30px; /* left and right padding for all content */
+    }
+
+    h2 {
+      color: #004080;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .hero {
+      background: url('https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Houseboat%20coco%20ok.jpg') no-repeat center center;
+      background-size: cover;
+      height: 85vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 30px;
+    }
+
+    .hero-text {
+      background-color: rgba(0, 102, 102, 0.7);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      max-width: 320px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: calc(100% - 60px); /* for padding */
+    }
+
+    .menu-box {
+      width: 120px;
+      height: 120px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .menu-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 128, 128, 0.3);
+    }
+
+    .menu-box i {
+      font-size: 28px;
+      color: #006666;
+      margin-bottom: 8px;
+    }
+
+    .menu-box span {
+      display: block;
+      font-weight: 600;
+      color: #006666;
+    }
+
+    .details-box {
+      display: none;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-left: 6px solid #006666;
+      max-width: 700px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section input,
+    .form-section select {
+      padding: 10px;
+      margin-bottom: 15px;
+      width: 100%;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-section label {
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    footer {
+      background-color: #88c9bf;
+      color: #000;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery-img {
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+    }
+
+    section p,
+    section ul {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      .hero-text {
+        left: 10px;
+        bottom: 20px;
+        padding: 15px;
+        max-width: 90%;
+      }
+
+      .menu-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="menu-container">
+      <div class="menu-box" onclick="showDetail('hotels')"><i class="fa fa-hotel"></i><span>Hotels</span></div>
+      <div class="menu-box" onclick="showDetail('boats')"><i class="fa fa-ship"></i><span>House Boats</span></div>
+      <div class="menu-box" onclick="showDetail('shikkara')"><i class="fa fa-sailboat"></i><span>Shikkara boats</span></div>
+      <div class="menu-box" onclick="showDetail('homestays')"><i class="fa fa-home"></i><span>Homestays</span></div>
+       <div class="menu-box" onclick="showDetail('cabs')"><i class="fa fa-taxi"></i><span>Cabs</span></div>
+      <div class="menu-box" onclick="showDetail('packages')"><i class="fa fa-gift"></i><span>Packages</span></div>
+      <div class="menu-box" onclick="showDetail('offers')"><i class="fa fa-tags"></i><span>Offers</span></div>
+      
+    </div>
+
+    <div class="hero-text">
+      <h1 style="font-size: 30px; margin-bottom: 5px;">CoirGreen Holidays</h1>
+      <p style="margin: 0;">Kerala's Essence in Every Journey</p>
+    </div>
+  </header>
+
+  <!-- Dynamic Details Boxes -->
+  <div id="hotels" class="details-box"><strong>Hotels:</strong> We offer stays in premium, mid-range, and budget hotels across Kerala.</div>
+  <div id="boats" class="details-box"><strong>House Boats:</strong> Enjoy backwater cruises in deluxe and luxury houseboats with meals.</div>
+  <div id="homestays" class="details-box"><strong>Homestays:</strong> Experience Kerala’s culture with our curated homestay partners.</div>
+  <div id="shikkara" class="details-box"><strong>Shikkara Rides:</strong> Short scenic boat rides perfect for a tranquil experience.</div>
+  <div id="packages" class="details-box"><strong>Holiday Packages:</strong> Custom itineraries across hill stations, beaches & heritage spots.</div>
+  <div id="offers" class="details-box"><strong>Offers:</strong> Seasonal discounts, early bird deals & festival packages available.</div>
+  <div id="cabs" class="details-box"><strong>Cabs:</strong> Book safe and reliable chauffeur-driven AC cabs for your entire trip.</div>
+
+  <!-- About -->
+  <section id="about" class="w3-container w3-padding-64">
+    <h2>About Us</h2>
+    <p>We specialize in authentic Kerala experiences — from lush hill stations and backwaters to rich cultural tours. Our team curates comfortable and memorable travel moments for all age groups.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="w3-container w3-light-grey w3-padding-64">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Backwater Houseboat Cruises</li>
+      <li>Hill Station Retreats</li>
+      <li>Beachside Packages</li>
+      <li>Family and Group Tours</li>
+      <li>Customized Itineraries</li>
+    </ul>
+  </section>
+
+  <!-- Plan Your Trip -->
+  <section id="plan" class="w3-container w3-padding-64">
+    <h2>Plan Your Trip</h2>
+    <div class="form-section w3-card w3-padding w3-white" style="max-width: 600px; margin: 0 auto;">
+      <form>
+        <label for="from-date">From Date:</label>
+        <input type="date" id="from-date" name="from-date" required />
+        <label for="to-date">To Date:</label>
+        <input type="date" id="to-date" name="to-date" required />
+        <label for="adults">Number of Adults:</label>
+        <select id="adults" name="adults">
+          <option>1</option><option>2</option><option>3</option><option>4+</option>
+        </select>
+        <label for="children">Number of Children:</label>
+        <select id="children" name="children">
+          <option>0</option><option>1</option><option>2</option><option>3+</option>
+        </select>
+        <button class="w3-button w3-teal w3-margin-top">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="w3-container w3-padding-64 w3-light-grey">
+    <h2>Gallery</h2>
+    <div class="w3-row-padding w3-center">
+      <div class="w3-third">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort" style="width:100%" class="gallery-img">
+      </div>
+      <div class="w3-third">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden" style="width:100%" class="gallery-img">
+      </div>
+      <div class="w3-third">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Beach" style="width:100%" class="gallery-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="w3-container w3-padding-64">
+    <h2>Contact Us</h2>
+    <form class="w3-card w3-white w3-padding" style="max-width: 600px; margin: 0 auto;">
+      <label>Name:</label>
+      <input type="text" class="w3-input w3-margin-bottom" required>
+      <label>Email:</label>
+      <input type="email" class="w3-input w3-margin-bottom" required>
+      <label>Message:</label>
+      <textarea class="w3-input w3-margin-bottom" required></textarea>
+      <button class="w3-button w3-teal w3-margin-top">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+<!-- Footer -->
+<footer style="background-color: #003366; color: #fff; padding: 20px;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    
+    <!-- Left side: Social Icons -->
+    <div>
+      <a href="https://www.youtube.com/@YourChannel" target="_blank" style="color: #fff; margin-right: 20px; font-size: 28px; text-decoration: none;">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/YourProfile" target="_blank" style="color: #fff; font-size: 28px; text-decoration: none;">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+
+    <!-- Right side: Copyright -->
+    <div style="font-size: 16px; text-align: right;">
+      &copy; 2025 CoirGreen Holidays. All rights reserved
+    </div>
+
+  </div>
+</footer>
+
+
+
+  <script>
+    function showDetail(id) {
+      const boxes = document.querySelectorAll('.details-box');
+      boxes.forEach(box => box.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
