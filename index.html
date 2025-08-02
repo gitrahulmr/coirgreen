@@ -6,8 +6,6 @@
   <title>CoirGreen Holidays</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* Base Styles */
-   
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -15,14 +13,36 @@
       color: #333;
     }
 
+    /* Header with background image */
     header {
       background: url('https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Houseboat%20coco%20ok.jpg') no-repeat center center/cover;
-      height: 80vh;
+      height: 45vh;
       position: relative;
       color: white;
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      justify-content: flex-end;
       padding: 20px;
+    }
+
+    /* Top contact bar inside background */
+    .top-bar {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: white;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    .top-bar div {
+      margin: 5px 10px;
     }
 
     .hero-text {
@@ -49,6 +69,15 @@
       text-decoration: none;
       color: #006666;
       font-weight: bold;
+    }
+
+    .nav-item i {
+      margin-right: 6px;
+    }
+
+    .nav-item:hover {
+      color: #ff6600;
+      border-bottom: 2px solid #ff6600;
     }
 
     section {
@@ -115,7 +144,6 @@
       text-decoration: none;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
       header {
         height: 60vh;
@@ -137,6 +165,12 @@
 
       form {
         padding: 20px;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 13px;
       }
     }
 
@@ -161,173 +195,169 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Header Section -->
   <header>
+    <!-- Top Contact Bar inside header -->
+    <div class="top-bar">
+      <div><i class="fas fa-map-marker-alt"></i> Location: Alleppey, Kerala, India</div>
+      <div><i class="fas fa-globe"></i> Currency: INR ₹</div>
+      <div><i class="fas fa-phone"></i> +91-99999-99999</div>
+      <div><i class="fas fa-phone"></i> +91-99999-99999</div>
+      <div><i class="fas fa-envelope"></i> yt.rahulmr@gmail.com</div>
+      
+    </div>
+
     <div class="hero-text">
       <h1>CoirGreen Holidays Alleppey</h1>
       <p>Kerala's Essence in Every Journey</p>
     </div>
   </header>
 
-  <!-- Navigation -->
+  <!-- Navigation Menu -->
   <nav>
-    <a href="#contact" class="nav-item">Plan Your Trip</a>
-    <a href="#ABOUT" class="nav-item">Hotels</a>
-    <a href="#services" class="nav-item">Homestays</a>
-    <a href="#plan" class="nav-item">House Boats</a>
-    <a href="#contact" class="nav-item">Shikkara Boats</a>
-    <a href="#gallery" class="nav-item">Cab</a>
-    <a href="#contact" class="nav-item">Offers</a>
+    <a href="#book" class="nav-item"><i class="fas fa-suitcase-rolling"></i> Plan Your Trip</a>
+    <a href="#hotels" class="nav-item"><i class="fas fa-hotel"></i> Hotels</a>
+    <a href="#homestays" class="nav-item"><i class="fas fa-home"></i> Homestays</a>
+    <a href="#houseboats" class="nav-item"><i class="fas fa-ship"></i> Houseboats</a>
+    <a href="#shikkara" class="nav-item"><i class="fas fa-water"></i> Shikkara Boats</a>
+    <a href="#cab" class="nav-item"><i class="fas fa-car"></i> Cab</a>
+    <a href="#offers" class="nav-item"><i class="fas fa-tags"></i> Offers</a>
+    <a href="#contact" class="nav-item" style="background:#ff6600; color:white; padding:8px 15px; border-radius:5px;"><i class="fas fa-user-plus"></i> Book Now</a>
+
   </nav>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We offer customized Kerala holiday experiences including houseboats, hill stations, beaches, and more.</p>
-  </section>
+  
+  <!--Gallary Locations offer---->
 
-  <!-- Services Section -->
-  <section id="services" style="background: #e0f7f4;">
-    <h2>Our Services</h2>
-    <ul style="list-style: none; padding: 0;">
-      <li>✔️ Houseboat Cruises</li>
-      <li>✔️ Beach & Hill Retreats</li>
-      <li>✔️ Custom Family Packages</li>
-      <li>✔️ Reliable Cab Services</li>
-    </ul>
-  </section>
-
-  <!-- Plan Trip -->
-  <section id="plan">
-    <h2>Plan Your Trip</h2>
-    <form>
-      <input type="date" placeholder="From Date" required />
-      <input type="date" placeholder="To Date" required />
-      <select>
-        <option>Adults: 1</option><option>2</option><option>3</option><option>4+</option>
-      </select>
-      <select>
-        <option>Children: 0</option><option>1</option><option>2</option><option>3+</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
+<section id="gallery">
+   
+  <h2 style="text-align: center; font-size: 34px; color: #333; margin-bottom: 50px;">"Discover the hidden treasures of Alleppey with our handpicked locations — uniquely tailored just for you!"</h2>
  
-
-
-<!-- Gallery -->
-<section id="gallery" style="background: #f9f9f9;">
-  <h2 style="text-align:center; font-family: Arial, Helvetica, sans-serif, sans-serif;">Discover Alleppey</h2>
-  <div class="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
-
-    <figure style="position: relative; width: 280px; margin: 0; text-align: center;">
-      <!-- Location name centered over image -->
-      <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Pacifico', cursive;
-        font-size: 28px;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-        z-index: 2;
-        pointer-events: none;
-      ">
-        HouseBoats
+ 
+  <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px;">
+    
+    <a href="https://example.com/tea-plant-view" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Plant View" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Tea Plant View</div>
       </div>
-      <a href="https://en.wikipedia.org/wiki/Kettuvallam" target="_blank" style="display: block;">
-        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/House%20boat%20tree%20okay.jpg" alt="HouseBoats" style="width: 100%; border-radius: 8px;" />
-      </a>
-    </figure>
+    </a>
 
-    <figure style="position: relative; width: 280px; margin: 0; text-align: center;">
-      <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Pacifico', cursive;
-        font-size: 28px;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-        z-index: 2;
-        pointer-events: none;
-      ">
-       Backwaters
+    <a href="https://example.com/misty-hills" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg" alt="Misty Hills" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Misty Hills</div>
       </div>
-      <a href="https://en.wikipedia.org/wiki/Kerala_backwaters" target="_blank" style="display: block;">
-        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Backwaterokay.jpg" alt="Alleppey Backwater Tourism" style="width: 100%; border-radius: 8px;" />
-      </a>
-    </figure>
+    </a>
 
-    <figure style="position: relative; width: 280px; margin: 0; text-align: center;">
-      <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Pacifico', cursive;
-        font-size: 28px;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-        z-index: 2;
-        pointer-events: none;
-      ">
-       Beach 
+    <a href="https://example.com/resort-nature" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort in Nature" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Resort in Nature</div>
       </div>
-      <a href="https://en.wikipedia.org/wiki/Alappuzha_Beach" target="_blank" style="display: block;">
-        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg" alt="Alleppey Beach Tourism" style="width: 100%; border-radius: 8px;" />
-      </a>
-    </figure>
+    </a>
 
-    <figure style="position: relative; width: 280px; margin: 0; text-align: center;">
-      <div style="
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-family: 'Pacifico', cursive;
-        font-size: 28px;
-        color: white;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-        z-index: 2;
-        pointer-events: none;
-      ">
-      
+    <a href="https://example.com/tea-valley" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Tea Plantation Valley" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Tea Plantation Valley</div>
+      </div>
+    </a>
+
+    <a href="https://example.com/kerala-beach" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg" alt="Kerala Beach" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Kerala Beach</div>
+      </div>
+    </a>
+
+    <!-- Duplicates below -->
+    <a href="https://example.com/tea-path" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden Path" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Tea Garden Path</div>
+      </div>
+    </a>
+
+    <a href="https://example.com/foggy-trails" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg" alt="Foggy Trails" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Foggy Trails</div>
+      </div>
+    </a>
+
+    <a href="https://example.com/backwater-resort" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Backwater Resort" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Backwater Resort</div>
+      </div>
+    </a>
+
+    <a href="https://example.com/green-tea-estate" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Green Tea Estate" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Green Tea Estate</div>
+      </div>
+    </a>
+
+    <a href="https://example.com/sunset-beach" target="_blank" style="text-decoration: none;">
+      <div style="position: relative; overflow: hidden; border-radius: 10px;">
+        <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg" alt="Sunset Beach" style="width: 100%; display: block;">
+        <div style="position: absolute; bottom: 0; left: 0; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 12px; font-weight: bold; font-size: 16px;">Sunset Beach</div>
+      </div>
+    </a>
 
   </div>
 </section>
 
-<!-- Gallery 2 -->
-  <section id="gallery" style="background: #f9f9f9;">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort" />
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden" />
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Boat" />
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden" />
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Boat" />
-      <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Boat" />
+ 
+ <!-- Contact Us Section -->
+
+<section id="contact" style="padding: 60px 20px; background-color: #f0f4f8; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="text-align: center; font-size: 34px; color: #333; margin-bottom: 50px;">Dont Wait! — Book Your Dream Holiday with Us Now!</h2>
+
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 30px;">
+
+    <!-- WhatsApp -->
+    <div style="flex: 1; min-width: 200px; background: #fff; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 25px 20px; text-align: center; transition: transform 0.3s;">
+      <a href="https://wa.me/919876543210" target="_blank" style="text-decoration: none; color: inherit;">
+        <i class="fab fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
+        <h3 style="margin: 15px 0 5px;">WhatsApp</h3>
+        <p style="font-size: 18px; color: #555;">+91 98765 43210</p>
+      </a>
     </div>
-  </section>
-<!-- Gallery 2 -->
-<section id="gallery" style="background: #f9f9f9; padding: 20px;">
-  <h2 style="text-align: center; font-family: Arial, sans-serif;">Gallery</h2>
-  <div class="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
-    <!-- Each image has data-name for location -->
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" 
-         alt="Resort" data-name="Luxury Resort" onclick="openModal(this)" style="width: 200px; border-radius: 8px; cursor: pointer;" />
-    
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" 
-         alt="Tea Garden" data-name="Munnar Tea Garden" onclick="openModal(this)" style="width: 200px; border-radius: 8px; cursor: pointer;" />
-    
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" 
-         alt="Boat" data-name="Kerala Plantation" onclick="openModal(this)" style="width: 200px; border-radius: 8px; cursor: pointer;" />
+
+    <!-- Phone -->
+    <div style="flex: 1; min-width: 200px; background: #fff; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 25px 20px; text-align: center; transition: transform 0.3s;">
+      <a href="tel:+919876543210" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-phone" style="font-size: 38px; color: #0288d1;"></i>
+        <h3 style="margin: 15px 0 5px;">Call Us</h3>
+        <p style="font-size: 18px; color: #555;">+91 98765 43210</p>
+      </a>
+    </div>
+
+    <!-- Email -->
+    <div style="flex: 1; min-width: 200px; background: #fff; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); padding: 25px 20px; text-align: center; transition: transform 0.3s;">
+      <a href="mailto:yt.rahulmr@gmail.com" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-envelope" style="font-size: 36px; color: #f57c00;"></i>
+        <h3 style="margin: 15px 0 5px;">Email</h3>
+        <p style="font-size: 18px; color: #555;">yt.rahulmr@gmail.com</p>
+      </a>
+    </div>
+
   </div>
 </section>
 
-<!-- Gallary 4 test -->
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+<!-- Plan Trip -->
+  
+
+<!-- Gallery 3 -->
+
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -440,18 +470,19 @@
 
 <!-- Gallery Section -->
 <section id="gallery">
-  <h2>Gallery</h2>
+  <h2 style="text-align: center; font-size: 34px; color: #333; margin-bottom: 50px;">Travelers Photos</h2>
+  
   <div class="gallery">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort" onclick="openModal(0)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden" onclick="openModal(1)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(2)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(3)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(4)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort" onclick="openModal(5)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Garden" onclick="openModal(6)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(7)">
-    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(8)">
-<img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Plantation" onclick="openModal(8)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Plant 1" onclick="openModal(0)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg" alt="Misty Hills" onclick="openModal(1)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Resort Stay" onclick="openModal(2)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Tea Plantation" onclick="openModal(3)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg" alt="Kerala Beach" onclick="openModal(4)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg" alt="Tea Plant 2" onclick="openModal(5)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg" alt="Foggy Hills" onclick="openModal(6)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg" alt="Lakeside Resort" onclick="openModal(7)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg" alt="Tea Fields" onclick="openModal(8)">
+    <img src="https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg" alt="Sunny Beach" onclick="openModal(9)">
   </div>
 </section>
 
@@ -468,18 +499,45 @@
 <script>
   const images = [
     {
-      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg",
-      name: "Luxury Resort"
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg",
+      name: "Tea Plant View"
     },
     {
-      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg",
-      name: "Munnar Tea Garden"
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg",
+      name: "Misty Hills"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg",
+      name: "Resort in Nature"
     },
     {
       src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg",
-      name: "Kerala Plantation"
-        }
-        
+      name: "Tea Plantation Valley"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg",
+      name: "Kerala Beach"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/Tea%20plant%202%20okay.jpg",
+      name: "Tea Garden Path"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/hills%20misty%20okay.jpg",
+      name: "Foggy Mountain Trails"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/resort%20okay.jpg",
+      name: "Backwater Resort"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/tea%20planatio%20okay.jpg",
+      name: "Green Tea Estate"
+    },
+    {
+      src: "https://raw.githubusercontent.com/gitrahulmr/coirgreen/refs/heads/main/images/beach%20okay.jpg",
+      name: "Sunset Beach"
+    }
   ];
 
   let currentIndex = 0;
@@ -517,52 +575,70 @@
 
 
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Message"></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
  <!-- Quick Links Section -->
-<section id="quick-links" style="background: #f5f5e6; padding: 30px 20px; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">
-  <div style="max-width: 800px; margin: auto;">
-    <h3 style="text-align: center; color: #333; font-size: 20px; font-weight: bold; margin-bottom: 15px;">Quick Links</h3>
-    
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; text-align: left; row-gap: 6px;">
+<section id="quick-links" style="padding: 60px 20px; background-color: #eaf4f4; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="text-align: center; font-size: 30px; color: #004d40; margin-bottom: 50px;">
+    <i class="fas fa-link" style="margin-right: 10px;"></i>Quick Links
+  </h2>
 
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">About Us</a>
-      </div>
-      
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Customer Care</a>
-      </div>
+  <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Contact Us</a>
-      </div>
-
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Terms Of Service</a>
-          </div>
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Legal Notice</a>
-      </div>
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Escalation Matrix</a>
-      </div>    
-      <div style="flex: 1; min-width: 120px; padding: 6px;">
-        <a href="#" style="color: #005f73; text-decoration: none; font-size: 12px;">Careers</a>
-      </div>
-
-     
+    <!-- About Us -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-info-circle" style="font-size: 36px; color: #00796b;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">About Us</h3>
+      </a>
     </div>
+
+    <!-- Customer Care -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-headset" style="font-size: 36px; color: #00838f;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">Customer Care</h3>
+      </a>
+    </div>
+
+    <!-- Contact Us -->
+    
+
+    <!-- Terms -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-file-contract" style="font-size: 36px; color: #5d4037;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">Terms of Service</h3>
+      </a>
+    </div>
+
+    <!-- Legal Notice -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-gavel" style="font-size: 36px; color: #6a1b9a;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">Legal Notice</h3>
+      </a>
+    </div>
+
+    <!-- Escalation Matrix -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-exclamation-circle" style="font-size: 36px; color: #d84315;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">Escalation Matrix</h3>
+      </a>
+    </div>
+
+    <!-- Careers -->
+    <div style="flex: 1; min-width: 100px; max-width: 220px; background: #ffffff; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.1); padding: 25px 20px; text-align: center;">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <i class="fas fa-briefcase" style="font-size: 36px; color: #33691e;"></i>
+        <h3 style="margin-top: 15px; font-size: 18px;">Careers</h3>
+      </a>
+    </div>
+
   </div>
 </section>
+
+<!-- Font Awesome CDN (Add this in <head> if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 
 
@@ -594,21 +670,21 @@
   </div>
 </section>
 
-
-
-
- <!-- Footer -->
+<!-- Footer -->
 <footer>
-  <div>
-    <a href="https://www.youtube.com/@CoconutRoutes1" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-youtube"></i>
-    </a>
-    <a href="https://instagram.com/_rahulm.r_" target="_blank" rel="noopener noreferrer">
-      <i class="fab fa-instagram"></i>
-    </a>
-  </div>
-  <p>&copy; 2025 CoirGreen Holidays. All Rights Reserved.</p>
+  <p>&copy; 2025 CoirGreen Holidays | Follow us</p>
+
+  <a href="https://www.youtube.com/@CoconutRoutes1" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://instagram.com/_rahulm.r_" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </footer>
+
     
 </body>
 </html>
